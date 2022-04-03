@@ -6,6 +6,7 @@ import by.bsuir.diplom.orchestration.model.BlockReasonDto;
 import by.bsuir.diplom.orchestration.model.UserAccountDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ import javax.validation.Valid;
 public interface AccountServiceClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/account/{id}")
-    UserAccountDto getAccount(@PathVariable long id);
+    ResponseEntity<UserAccountDto> getAccount(@PathVariable long id);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/account/{id}")
     void editAccount(@PathVariable long id, @RequestBody AccountEditDto accountEditDto);

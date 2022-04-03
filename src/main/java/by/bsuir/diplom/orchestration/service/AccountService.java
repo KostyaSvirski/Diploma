@@ -15,12 +15,12 @@ public class AccountService {
     private final AccountServiceClient accountServiceClient;
 
     public UserAccountDto getAccount(long id) {
-        return accountServiceClient.getAccount(id);
+        return accountServiceClient.getAccount(id).getBody();
     }
 
     public UserAccountDto getMe() {
-        var details = SecurityContextHolder.getContext().getAuthentication().getDetails();
-        return accountServiceClient.getAccount(1);
+        /*var details = SecurityContextHolder.getContext().getAuthentication().getDetails();*/
+        return accountServiceClient.getAccount(1).getBody();
     }
 
     public void editAccount(long id, AccountEditDto dto) {

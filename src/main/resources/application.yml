@@ -7,5 +7,3 @@ custom:
       url: http://localhost:8081
     paymentService:
       url: http://localhost:8082
-    calculatorService:
-      url: http://localhost:8083

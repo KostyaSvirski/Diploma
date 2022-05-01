@@ -7,3 +7,13 @@ custom:
       url: http://localhost:8081
     paymentService:
       url: http://localhost:8082
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+        loggerLevel: basic
+
+
